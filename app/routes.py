@@ -3,7 +3,9 @@ from flask import Flask, jsonify, request
 from .helpers import *
 import mysql.connector
 
+
 app = Flask(__name__, static_folder='.', static_url_path='')
+
 
 @app.route('/', methods=["POST"])
 def handle_request():
@@ -30,8 +32,8 @@ def handle_request():
             return handle_request()
         else:
             # 正常な場合、challengesテーブルに挿入
-            sql = "INSERT INTO challenges (challenge_id, choice, hint, flag, difficult) SELECT MAX(challenge_id) + 1, %s, %s, %s, %s FROM challenges;"
-            cursor.execute(sql, (answer, hint, "kinopeee", 0))
+            sql = "INSERT INTO challenges (challenge_id, choice, hint) VALUES(%s, %s, %s, %s);"
+            cursor.execute(sql, (challenge_id, answer, hint))
             conn.commit()
 
         cursor.close()

@@ -7,6 +7,7 @@ import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 import subprocess
 
+
 def chat(prompt):
     return openai.ChatCompletion.create(
         model="gpt-4",
@@ -19,6 +20,7 @@ def chat(prompt):
         temperature=0.8
     ).choices[0].message.content
 
+
 def generate_file(text, extension, file_name=None):
     code_pattern = re.compile(r'```{}\s+(.*?)```'.format(extension), re.DOTALL)
     code = code_pattern.findall(text)
@@ -29,12 +31,14 @@ def generate_file(text, extension, file_name=None):
     else:
         return code
 
+
 def get_prompt():
     global prompt
     if request.get_json()["prompt"]:
         return request.get_json()["prompt"]
     else:
         return prompt
+
 
 def make_environment(chat, challenge_id):
     dir = BASE_DIR + challenge_id
@@ -46,8 +50,9 @@ def make_environment(chat, challenge_id):
 
     translator = Translator()
     hint = translator.translate(generate_file(chat, "hint")[0], dest='ja').text
-    answer = translator.translate(generate_file(chat, "answer")[0], dest='ja').text
+    answer = generate_file(chat, "answer")[0]
     return hint, answer
+
 
 def test(challenge_id):
     requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -57,6 +62,7 @@ def test(challenge_id):
         return {"message": "unsuccessful"}
     else:
         return {"message": "ok"}
+
 
 def cleanup_challenge(challenge_id):
     subprocess.run(['rm', '-rf', BASE_DIR + str(challenge_id)])
