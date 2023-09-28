@@ -11,7 +11,8 @@ We need to prepare for web app security training so please make your web site wi
  - DB name is obtained from .env by DATABASE
  - Table name is users
  - 3 columns: id, username, password
- - Output hints and answers in code blocks (``hint`` and ``answer``)
+ - Output hints in code blocks (```hint```)
+ - Output answer in csv format(answer, description)
  - Don't make the hint lead directly to the answer
  - Stylish design
 
@@ -27,39 +28,26 @@ Webアプリのセキュリティトレーニングの準備が必要なので�
  - DB名は.envからDATABASEで取得
  - テーブル名はusers
  - 3つのカラム：id, username, password
- - ヒントと答えをコードブロックで出力する(``hint`` と ``answer``)
- - 答えに直接つながるヒントにしないこと
+ - ヒントをコードブロックで出力する(```hint```)
+ - 答えをcsv形式で出力(答え, 説明)
  - お洒落なデザイン
 
 # 商品検索ページテンプレート
 We need to prepare for web app security training so please make your web site with the following conditionsConditions
- - Product search page
- - Contains vulnerabilities related to OS command injection (for educational purposes)
- - Use mysqli
- - Prepare one PHP file (index.php, embed html) and one CSS file (style.css)
- - DB information is obtained from .env with vlucas/phpdotenv.
- - DB host is obtained from .env by HOST.
- - DB user is obtained from .env by USER
- - DB password is obtained from .env by PASSWORD
- - DB name is obtained from .env by SHOPPING_DATABASE
- - Table name is items
- - 3 columns: id, name, price
- - Output hints and answers in code blocks (``hint`` and ``answer``)
- - Don't make the hint lead directly to the answer
+ - Looks like a product search page
+ - Executes commands typed in a text box as is
+ - Contains vulnerabilities related to OS command injection that executes textbox commands as they are and displays the output (for educational purposes)
+ - One PHP file (index.php, embed html) and one CSS file (style.css)
+ - Output hints in code blocks (```hint```)
+ - Output answer in csv format(answer, description)
+ - Do not make the hint lead directly to the answer
  - Stylish design
 
 Webアプリのセキュリティトレーニングの準備が必要なので、以下の条件でWebサイトを作成してください。
- - 商品検索ページ
- - OSコマンドインジェクションに関する脆弱性を含む（教育用）
- - mysqliを使用する
+ - 見た目は商品検索ページ
+ - テキストボックスに入力されたコマンドをそのまま実行する
+ - テキストボックスのコマンドをのまま実行し、出力を表示するOSコマンドインジェクションに関する脆弱性を含む（教育用）
  - PHPファイル(index.php, htmlを埋め込む)とCSSファイル(style.css)を1つずつ用意する。
- - DB情報は.envからvlucas/phpdotenvで取得。
- - DBホストは.envからHOSTで取得します。
- - DBユーザーは.envからUSERで取得
- - DBのパスワードは.envからPASSWORDで取得
- - DB名は.envからSHOPPING_DATABASEで取得
- - テーブル名はitems
- - 3つのカラム：id, name, price
- - ヒントと答えをコードブロックで出力する(``hint`` と ``answer``)
+ - ヒントをコードブロックで出力する(```hint```)
  - 答えに直接つながるヒントにしないこと
  - お洒落なデザイン
