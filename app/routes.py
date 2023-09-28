@@ -20,8 +20,8 @@ def handle_request():
         sql = "SELECT MAX(challenge_id), MAX(vulnerability_id) FROM challenges;"
         cursor.execute(sql)
         challenge_id, vulnerability_id = cursor.fetchone()
-        challenge_id = str(challenge_id + 1)
-        vulnerability_id = str(vulnerability_id + 1)
+        challenge_id = "1" if challenge_id is None else str(challenge_id + 1)
+        vulnerability_id = "1" if vulnerability_id is None else str(vulnerability_id + 1)
 
         hint, answer = make_environment(chat_response, challenge_id)
         answer = to_comma_separated(answer)
