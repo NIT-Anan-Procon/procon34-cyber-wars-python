@@ -9,7 +9,7 @@ We need to prepare for web app security training so please make your web site wi
  - DB user is obtained from .env by USER.
  - DB password is obtained from .env by PASSWORD.
  - DB name is obtained from .env by DATABASE.
- - Table name is CHALLENGES
+ - Table name is users
  - 3 columns: id, name, password
  - Output hints and answers in code blocks (```hint``, ``answer```)
  - Make sure that hints do not lead directly to answers
@@ -26,7 +26,7 @@ Webアプリのセキュリティトレーニングの準備が必要なので�
  - DBユーザーは.envからUSERで取得。
  - DBのパスワードは.envからPASSWORDで取得する。
  - DB名は.envからDATABASEで取得する。
- - テーブル名はchallenges
+ - テーブル名はusers
  - 3つのカラム: id, name, password
  - ヒントと答えをコードブロックに出力 (```hint```, ```answer```)
  - ヒントが直接答えにつながらないようにすること
