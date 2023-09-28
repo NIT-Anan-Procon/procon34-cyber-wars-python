@@ -1,36 +1,37 @@
 # ログインページテンプレート
 We need to prepare for web app security training so please make your web site with the following conditionsConditions
  - Login page
- - Contain vulnerabilities related to SQL injection (for educational purposes)
+ - Contain vulnerabilities related to SQL injection (educational version)
  - Use mysqli
- - Prepare one PHP file (index.php, embed html) and one CSS file (style.css)
+ - Prepare one PHP file (index.php, embed html) and one CSS file (style.css).
  - DB information is obtained from .env with vlucas/phpdotenv.
  - DB host is obtained from .env by HOST.
- - DB user is obtained from .env by USER
- - DB password is obtained from .env by PASSWORD
- - DB name is obtained from .env by DATABASE
- - Table name is users
- - 3 columns: id, username, password
- - Output hints in code blocks (```hint```)
- - Output answer in csv format(answer, description)
- - Don't make the hint lead directly to the answer
+ - DB user is obtained from .env by USER.
+ - DB password is obtained from .env by PASSWORD.
+ - DB name is obtained from .env by DATABASE.
+ - Table name is CHALLENGES
+ - 3 columns: id, name, password
+ - Output hints and answers in code blocks (```hint``, ``answer```)
+ - Make sure that hints do not lead directly to answers
+ - Output answers in csv format (answer, description) e.g.: ``'' OR '1' = '1', description ``''
  - Stylish design
 
 Webアプリのセキュリティトレーニングの準備が必要なので、以下の条件でWebサイトを作成してください。
  - ログインページ
- - SQLインジェクションに関する脆弱性を含む（教育用）
- - mysqliを使用する
- - PHPファイル(index.php, htmlを埋め込む)とCSSファイル(style.css)を1つずつ用意する。
+ - SQLインジェクションに関する脆弱性を含む（教育版）
+ - mysqliを使う
+ - PHPファイル(index.php, htmlを埋め込む)を1つ、CSSファイル(style.css)を1つ用意する。
  - DB情報は.envからvlucas/phpdotenvで取得。
- - DBホストは.envからHOSTで取得します。
- - DBユーザーは.envからUSERで取得
- - DBのパスワードは.envからPASSWORDで取得
- - DB名は.envからDATABASEで取得
- - テーブル名はusers
- - 3つのカラム：id, username, password
- - ヒントをコードブロックで出力する(```hint```)
- - 答えをcsv形式で出力(答え, 説明)
- - お洒落なデザイン
+ - DBホストは.envからHOSTで取得。
+ - DBユーザーは.envからUSERで取得。
+ - DBのパスワードは.envからPASSWORDで取得する。
+ - DB名は.envからDATABASEで取得する。
+ - テーブル名はchallenges
+ - 3つのカラム: id, name, password
+ - ヒントと答えをコードブロックに出力 (```hint```, ```answer```)
+ - ヒントが直接答えにつながらないようにすること
+ - 答えをcsv形式で出力する(答え, 説明) 例: ``' OR '1' = '1', 説明``'
+ - スタイリッシュなデザイン
 
 # 商品検索ページテンプレート
 We need to prepare for web app security training so please make your web site with the following conditionsConditions
