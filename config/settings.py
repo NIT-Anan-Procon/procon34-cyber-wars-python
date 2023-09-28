@@ -7,7 +7,7 @@ import requests
 
 load_dotenv(verbose=True)
 
-BASE_DIR = "/var/www/procon34-cyber-wars-php/"
+BASE_DIR = "/var/www/procon34-cyber-wars-php/challenge/"
 HOST = os.getenv("DB_HOST")
 USER = os.getenv("DB_USER")
 PASSWORD = os.getenv("DB_PASSWORD")
