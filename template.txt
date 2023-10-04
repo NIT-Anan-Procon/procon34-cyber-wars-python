@@ -1,7 +1,7 @@
-# ログインページテンプレート
+# ログインページ
 We need to prepare for web app security training so please make your web site with the following conditionsConditions
- - Login page
- - Contain vulnerabilities related to SQL injection (educational version)
+ - Login Page
+ - Contains vulnerabilities related to SQL injection (for education)
  - Use mysqli
  - Prepare one PHP file (index.php, embed html) and one CSS file (style.css).
  - DB information is obtained from .env with vlucas/phpdotenv.
@@ -11,9 +11,9 @@ We need to prepare for web app security training so please make your web site wi
  - DB name is obtained from .env by DATABASE.
  - Table name is users
  - 3 columns: id, name, password
- - Output hints and answers in code blocks (```hint``, ``answer```)
- - Make sure that hints do not lead directly to answers
- - Output answers in csv format (answer, description) e.g.: ``'' OR '1' = '1', description ``''
+ - Output hint and answer in code block (```hint``` for example: ```hint\ndescription)\n```, ```csv```)
+ - Don't make the hint lead directly to the answer
+ - Output answer in csv format(answer, description) example: ```' OR '1' = '1', description```
  - Stylish design
 
 Webアプリのセキュリティトレーニングの準備が必要なので、以下の条件でWebサイトを作成してください。
@@ -28,27 +28,104 @@ Webアプリのセキュリティトレーニングの準備が必要なので�
  - DB名は.envからDATABASEで取得する。
  - テーブル名はusers
  - 3つのカラム: id, name, password
- - ヒントと答えをコードブロックに出力 (```hint```, ```answer```)
+ - ヒントと答えをコードブロックに出力 (```hint```, ```csv```)
  - ヒントが直接答えにつながらないようにすること
  - 答えをcsv形式で出力する(答え, 説明) 例: ``' OR '1' = '1', 説明``'
  - スタイリッシュなデザイン
 
-# 商品検索ページテンプレート
+# 商品検索ページ×コメントアウト
+We need to prepare for web app security training so please make your web site with the following conditionsConditions
+ - Product search page
+ - Contains vulnerabilities related to SQL injection (educational version)
+ - SQL executes `SELECT name, price FROM products WHERE name = '$keyword`.
+ - Use PDO
+ - Prepare one PHP file (index.php, embed html) and one CSS file (style.css)
+ - DB information is obtained from .env with vlucas/phpdotenv.
+ - DB host is obtained from .env by HOST.
+ - DB user is obtained from .env by USER.
+ - DB password is obtained from .env by PASSWORD.
+ - DB name is obtained by DATABASE from .env.
+ - Table name is products
+ - 3 columns: product_id, name, price
+ - output hints and answers in code blocks (```hint```, ```csv```)
+ - Make sure that the hints do not lead directly to the answers
+ - Output answers in csv format (answer, description) e.g.: ``'' OR 1 = 1 --, description``'
+ - Stylish design
+
+Webアプリのセキュリティトレーニングの準備が必要なので、以下の条件でWebサイトを作成してください。
+ - 商品検索ページ
+ - SQLインジェクションに関する脆弱性を含む（教育版）
+ - SQLは`SELECT name, price FROM products WHERE name = '$keyword'`を実行する
+ - PDOを使う
+ - PHPファイル(index.php, htmlを埋め込む)を1つ、CSSファイル(style.css)を1つ用意する。
+ - DB情報は.envからvlucas/phpdotenvで取得。
+ - DBホストは.envからHOSTで取得。
+ - DBユーザーは.envからUSERで取得。
+ - DBのパスワードは.envからPASSWORDで取得する。
+ - DB名は.envからDATABASEで取得する。
+ - テーブル名はproducts
+ - 3つのカラム: product_id, name, price
+ - ヒントと答えをコードブロックに出力 (```hint```, ```csv```)
+ - ヒントが直接答えにつながらないようにすること
+ - 答えをcsv形式で出力する(答え, 説明) 例: ``' OR 1 = 1 --, 説明``'
+ - スタイリッシュなデザイン
+
+# 商品検索ページ×UNIONインジェクション
+We need to prepare for web app security training so please make your web site with the following conditionsConditions
+ - Product search page
+ - Contains vulnerabilities related to UNION injection (educational version)
+ - SQL executes `SELECT name, price FROM products WHERE name LIKE '%$keyword%'`.
+ - Use PDO
+ - Prepare one PHP file (index.php, embed html) and one CSS file (style.css).
+ - DB information is obtained from .env with vlucas/phpdotenv.
+ - DB host is obtained from .env by HOST.
+ - DB user is obtained from .env by USER.
+ - DB password is obtained from .env by PASSWORD.
+ - DB name is obtained by DATABASE from .env.
+ - Table name is products
+ - 3 columns: product_id, name, price
+ - Output hints and answers in code blocks (```hint```, ```csv```)
+ - Make sure that the hint does not lead directly to the answer.
+ - Output answers in csv format (answer, description) e.g.: ```'' UNION SELECT name, '' FROM users --, description```
+ - Stylish design
+
+Webアプリのセキュリティトレーニングの準備が必要なので、以下の条件でWebサイトを作成してください。
+ - 商品検索ページ
+ - UNIONインジェクションに関する脆弱性を含む（教育版）
+ - SQLは`SELECT name, price FROM products WHERE name LIKE '%$keyword%'`を実行する
+ - PDOを使う
+ - PHPファイル(index.php, htmlを埋め込む)を1つ、CSSファイル(style.css)を1つ用意する。
+ - DB情報は.envからvlucas/phpdotenvで取得。
+ - DBホストは.envからHOSTで取得。
+ - DBユーザーは.envからUSERで取得。
+ - DBのパスワードは.envからPASSWORDで取得する。
+ - DB名は.envからDATABASEで取得する。
+ - テーブル名はproducts
+ - 3つのカラム: product_id, name, price
+ - ヒントと答えをコードブロックに出力 (```hint```, ```csv```)
+ - ヒントが直接答えにつながらないようにすること
+ - 答えをcsv形式で出力する(答え, 説明) 例: ```' UNION SELECT name, '' FROM users --, 説明```
+ - スタイリッシュなデザイン
+
+# 商品検索ページ×OSコマンドインジェクション
 We need to prepare for web app security training so please make your web site with the following conditionsConditions
  - Looks like a product search page
  - Executes commands typed in a text box as is
- - Contains vulnerabilities related to OS command injection that executes textbox commands as they are and displays the output (for educational purposes)
- - One PHP file (index.php, embed html) and one CSS file (style.css)
- - Output hints in code blocks (```hint```)
- - Output answer in csv format(answer, description)
- - Do not make the hint lead directly to the answer
+ - Includes vulnerabilities related to OS command injection (for educational purposes) that executes commands in text boxes as they are and displays the output
+ - Prepare one PHP file (index.php, embed html) and one CSS file (style.css)
+ - Output hint and answer in code block (```hint``` for example: ```hint\ndescription)\n```, ```csv```)
+ - Don't make the hint lead directly to the answer
+ - Output answer in csv format(answer, description) example: ```' OR '1' = '1', description```
  - Stylish design
+ - Use the exec_cmd function in safe_exec.php in the parent directory for the function that executes the command
 
 Webアプリのセキュリティトレーニングの準備が必要なので、以下の条件でWebサイトを作成してください。
  - 見た目は商品検索ページ
  - テキストボックスに入力されたコマンドをそのまま実行する
  - テキストボックスのコマンドをのまま実行し、出力を表示するOSコマンドインジェクションに関する脆弱性を含む（教育用）
  - PHPファイル(index.php, htmlを埋め込む)とCSSファイル(style.css)を1つずつ用意する。
- - ヒントをコードブロックで出力する(```hint```)
- - 答えに直接つながるヒントにしないこと
+ - ヒントと答えをコードブロックに出力 (```hint```, ```csv```)
+ - ヒントが直接答えにつながらないようにすること
+ - 答えをcsv形式で出力する(答え, 説明) 例: ``' OR '1' = '1', 説明``'
  - お洒落なデザイン
+ - コマンドを実行する関数は親ディレクトリにあるsafe_exec.phpのexec_cmd関数を使うこと

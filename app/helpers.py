@@ -34,6 +34,9 @@ def extract_comma(input_text):
 def generate_file(text, extension, file_name=None):
     code_pattern = re.compile(r'```{}\s+(.*?)```'.format(extension), re.DOTALL)
     code = code_pattern.findall(text)
+    if len(code) == 0:
+        code_pattern = re.compile(r'```{}\s+(.*?)```'.format(extension.upper()), re.DOTALL)
+        code = code_pattern.findall(text)
     
     if file_name:
         with open(file_name, "w") as file:
@@ -42,17 +45,13 @@ def generate_file(text, extension, file_name=None):
         return code
 
 
-def initialize_messages():
-    messages = []
-
-
 def is_alpha(text):
     pattern = r"^[a-zA-Z]+$"
-    return bool(re.match(pattern, text))
+    return bool(re.match(pattern, text)) or text == ','
 
 
 def make_environment(chat, challenge_id):
-    dir = BASE_DIR + challenge_id
+    dir = BASE_DIR + "/challenge/" + challenge_id
     os.makedirs(dir, exist_ok=True)
     subprocess.run(['cp', BASE_DIR + "/.env", dir + "/.env"])
     subprocess.run(['cp', '-r', BASE_DIR + "/vendor", dir + "/vendor"])
@@ -61,14 +60,15 @@ def make_environment(chat, challenge_id):
 
     translator = Translator()
     hint = translator.translate(generate_file(chat, "hint")[0], dest='ja').text
-    answer = extract_comma(generate_file(chat, "answer")[0])
+    answer = extract_comma(generate_file(chat, "csv")[0])
     answer = to_comma_separated(answer)
     return hint, answer
 
 
 def test(challenge_id):
     requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-    res = requests.get("https://localhost/php/" + challenge_id + "/index.php", verify=False)
+    res = requests.get("https://localhost/php/challenge/" + challenge_id + "/index.php", verify=False)
+    print(res)
     if res.status_code != 200:
         return {"message": "unsuccessful"}
     else:
@@ -76,18 +76,20 @@ def test(challenge_id):
 
 
 def to_comma_separated(input_text):
-    transformed_text = ','.join(input_text)
-    transformed_text = transformed_text.replace(' ,', '')
+    transformed_text = input_text.replace(' ', ',')
+    print(transformed_text)
 
     result = ""
-    for i, s in enumerate(transformed_text):
-        if is_alpha(transformed_text[i - 1]) and is_alpha(transformed_text[i + 1]) and s == ',':
+    for i in range(len(transformed_text)):
+        result += transformed_text[i]
+        if i == len(transformed_text) - 1:
             continue
-        else:
-            result += s
+        if is_alpha(transformed_text[i]) == False and is_alpha(transformed_text[i + 1]) == False:
+            print(transformed_text[i], transformed_text[i + 1])
+            result += ','
 
     return result
 
 
 def cleanup_challenge(challenge_id):
-    subprocess.run(['rm', '-rf', BASE_DIR + str(challenge_id)])
+    subprocess.run(['rm', '-rf', BASE_DIR + "/challenge/" + str(challenge_id)])
