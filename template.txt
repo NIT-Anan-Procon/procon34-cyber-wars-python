@@ -1,8 +1,8 @@
 # ログインページ
 We need to prepare for web app security training so please make your web site with the following conditionsConditions
  - Login Page
- - Contains vulnerabilities related to SQL injection (for education)
- - Use mysqli
+ - Contains Vulnerabilities Related to SQL Injection (Education Edition)
+ - Using mysqli
  - Prepare one PHP file (index.php, embed html) and one CSS file (style.css).
  - DB information is obtained from .env with vlucas/phpdotenv.
  - DB host is obtained from .env by HOST.
@@ -11,10 +11,12 @@ We need to prepare for web app security training so please make your web site wi
  - DB name is obtained from .env by DATABASE.
  - Table name is users
  - 3 columns: id, name, password
- - Output hint and answer in code block (```hint``` for example: ```hint\ndescription)\n```, ```csv```)
- - Don't make the hint lead directly to the answer
- - Output answer in csv format(answer, description) example: ```' OR '1' = '1', description```
+ - output hints and answers in code blocks (```hint```, ```csv```)
+ - Make sure that hints do not lead directly to answers
+ - Output answers in csv format (answer, description) e.g.: ```' OR '1' = '1', description ```
  - Stylish design
+ - Display the name of the logged in user at the bottom of the form like this. ````Logged in successfully. Your name is {name}. ```
+ - No action attribute in form tag
 
 Webアプリのセキュリティトレーニングの準備が必要なので、以下の条件でWebサイトを作成してください。
  - ログインページ
@@ -32,25 +34,28 @@ Webアプリのセキュリティトレーニングの準備が必要なので�
  - ヒントが直接答えにつながらないようにすること
  - 答えをcsv形式で出力する(答え, 説明) 例: ``' OR '1' = '1', 説明``'
  - スタイリッシュなデザイン
+ - ログインしたユーザの名前をフォームの下にこのように表示して。```Logged in successfuly. Your name is {name}.```
+ - formタグのaction属性は無し
 
 # 商品検索ページ×コメントアウト
 We need to prepare for web app security training so please make your web site with the following conditionsConditions
- - Product search page
+ - Product Search Page
  - Contains vulnerabilities related to SQL injection (educational version)
- - SQL executes `SELECT name, price FROM products WHERE name = '$keyword`.
+ - SQL executes `SELECT name, price FROM products WHERE name = '$keyword'`.
  - Use PDO
- - Prepare one PHP file (index.php, embed html) and one CSS file (style.css)
+ - Prepare one PHP file (index.php, embed html) and one CSS file (style.css).
  - DB information is obtained from .env with vlucas/phpdotenv.
  - DB host is obtained from .env by HOST.
  - DB user is obtained from .env by USER.
  - DB password is obtained from .env by PASSWORD.
- - DB name is obtained by DATABASE from .env.
+ - DB name is obtained from .env by DATABASE.
  - Table name is products
  - 3 columns: product_id, name, price
  - output hints and answers in code blocks (```hint```, ```csv```)
- - Make sure that the hints do not lead directly to the answers
- - Output answers in csv format (answer, description) e.g.: ``'' OR 1 = 1 --, description``'
+ - Make sure that the hint does not lead directly to the answer.
+ - Output answer in csv format (answer, description) e.g.: ```' OR 1 = 1 --, description```
  - Stylish design
+ - No action attribute in form tag
 
 Webアプリのセキュリティトレーニングの準備が必要なので、以下の条件でWebサイトを作成してください。
  - 商品検索ページ
@@ -69,10 +74,11 @@ Webアプリのセキュリティトレーニングの準備が必要なので�
  - ヒントが直接答えにつながらないようにすること
  - 答えをcsv形式で出力する(答え, 説明) 例: ``' OR 1 = 1 --, 説明``'
  - スタイリッシュなデザイン
+ - formタグのaction属性は無し
 
 # 商品検索ページ×UNIONインジェクション
 We need to prepare for web app security training so please make your web site with the following conditionsConditions
- - Product search page
+ - Product Search Page
  - Contains vulnerabilities related to UNION injection (educational version)
  - SQL executes `SELECT name, price FROM products WHERE name LIKE '%$keyword%'`.
  - Use PDO
@@ -81,13 +87,14 @@ We need to prepare for web app security training so please make your web site wi
  - DB host is obtained from .env by HOST.
  - DB user is obtained from .env by USER.
  - DB password is obtained from .env by PASSWORD.
- - DB name is obtained by DATABASE from .env.
+ - DB name is obtained from .env by DATABASE.
  - Table name is products
  - 3 columns: product_id, name, price
- - Output hints and answers in code blocks (```hint```, ```csv```)
+ - output hints and answers in code blocks (```hint```, ```csv```)
  - Make sure that the hint does not lead directly to the answer.
  - Output answers in csv format (answer, description) e.g.: ```' UNION SELECT name, '' FROM users --, description```
  - Stylish design
+ - No action attribute in form tag
 
 Webアプリのセキュリティトレーニングの準備が必要なので、以下の条件でWebサイトを作成してください。
  - 商品検索ページ
@@ -106,6 +113,7 @@ Webアプリのセキュリティトレーニングの準備が必要なので�
  - ヒントが直接答えにつながらないようにすること
  - 答えをcsv形式で出力する(答え, 説明) 例: ```' UNION SELECT name, '' FROM users --, 説明```
  - スタイリッシュなデザイン
+ - formタグのaction属性は無し
 
 # 商品検索ページ×OSコマンドインジェクション
 We need to prepare for web app security training so please make your web site with the following conditionsConditions
@@ -113,11 +121,12 @@ We need to prepare for web app security training so please make your web site wi
  - cat products". Execute $product_id.".txt
  - Contains vulnerabilities related to OS command injection that displays the output of the command (for educational purposes)
  - Prepare one PHP file (index.php, embed html) and one CSS file (style.css)
- - Output hints and answers in code blocks (``hint``, ``csv``)
+ - Output hints and answers in code blocks (```hint```, ```csv```)
  - Ensure that the hints do not lead directly to the answer.
- - Output answers in csv format (answer, description) e.g.: ```; ls #, description``
+ - Output answers in csv format (answer, description) e.g.: ```; ls #, description```
  - Stylish design
- - Use the safe_shell_exec function from safe_shell_exec.php in the directory 2 levels above the function that executes the command
+ - Use the safe_shell_exec function from safe_shell_exec.php in the directory two levels above the function that executes the command.
+ - No action attribute in form tag
 
 Webアプリのセキュリティトレーニングの準備が必要なので、以下の条件でWebサイトを作成してください。
  - 見た目は商品検索ページ
@@ -129,12 +138,13 @@ Webアプリのセキュリティトレーニングの準備が必要なので�
  - 答えをcsv形式で出力する(答え, 説明) 例: ```; ls #, 説明```
  - お洒落なデザイン
  - コマンドを実行する関数2つ上のディレクトリにあるsafe_shell_exec.phpのsafe_shell_exec関数を使うこと
+ - formタグのaction属性は無し
 
  # 予約管理アプリ×コメントアウト
  We need to prepare for web app security training so please make your web site with the following conditionsConditions
  - Reservation Management Page
  - Contains vulnerabilities related to SQL injection (educational version)
- - SQL executes `SELECT name, date, room_id FROM products WHERE name = '$keyword'`.
+ - SQL executes `SELECT name, date, room_id FROM reservations WHERE name = '$keyword'`.
  - Use PDO
  - Prepare one PHP file (index.php, embed html) and one CSS file (style.css).
  - DB information is obtained from .env with vlucas/phpdotenv.
@@ -142,17 +152,18 @@ Webアプリのセキュリティトレーニングの準備が必要なので�
  - DB user is obtained from .env by USER.
  - DB password is obtained from .env by PASSWORD.
  - DB name is obtained from .env by DATABASE.
- - Table name is products
- - 4 columns: id, name, date, room_id
+ - Table name is reservations
+ - 3 columns: id, name, date, room_id
  - output hints and answers in code blocks (```hint```, ```csv```)
- - Do not allow hints to lead directly to the answer.
+ - Do not allow hints to lead directly to answers
  - Output answer in csv format (answer, description) e.g.: ```' OR 1 = 1 --, description```
  - Stylish design
+ - No action attribute in form tag
  
  Webアプリのセキュリティトレーニングの準備が必要なので、以下の条件でWebサイトを作成してください。
  - 予約管理ページ
  - SQLインジェクションに関する脆弱性を含む（教育版）
- - SQLは`SELECT name, date, room_id FROM products WHERE name = '$keyword'`を実行する
+ - SQLは`SELECT name, date, room_id FROM reservations WHERE name = '$keyword'`を実行する
  - PDOを使う
  - PHPファイル(index.php, htmlを埋め込む)を1つ、CSSファイル(style.css)を1つ用意する。
  - DB情報は.envからvlucas/phpdotenvで取得。
@@ -160,9 +171,49 @@ Webアプリのセキュリティトレーニングの準備が必要なので�
  - DBユーザーは.envからUSERで取得。
  - DBのパスワードは.envからPASSWORDで取得する。
  - DB名は.envからDATABASEで取得する。
- - テーブル名はproducts
+ - テーブル名はreservations
  - 3つのカラム: id, name, date, room_id
  - ヒントと答えをコードブロックに出力 (```hint```, ```csv```)
  - ヒントが直接答えにつながらないようにすること
  - 答えをcsv形式で出力する(答え, 説明) 例: ``' OR 1 = 1 --, 説明``'
  - スタイリッシュなデザイン
+ - formタグのaction属性は無し
+
+ # 資産管理アプリ×コメントアウト
+We need to prepare for web app security training so please make your web site with the following conditionsConditions
+ - Asset management page (site where you can view your name and balance after completing authentication by phone number and password)
+ - Contains vulnerabilities related to SQL injection (educational version)
+ - SQL executes `SELECT name, stock FROM financials WHERE phone_number = '$phone_number' and password = '$password
+ - Use PDO
+ - Prepare one PHP file (index.php, embed html) and one CSS file (style.css).
+ - DB information is obtained from .env with vlucas/phpdotenv.
+ - DB host is obtained from .env by HOST.
+ - DB user is obtained from .env by USER.
+ - DB password is obtained from .env by PASSWORD.
+ - DB name is obtained from .env by DATABASE.
+ - Table name is financials
+ - 3 columns: financial_id, name, phone_number, password, stock
+ - Output hints and answers in code blocks (```hint```, ```csv```)
+ - Do not allow hints to lead directly to the answer.
+ - Output answer in csv format (answer, description) e.g.: ```' OR '1' = '1, description```
+ - Stylish design
+ - No action attribute in form tag
+
+Webアプリのセキュリティトレーニングの準備が必要なので、以下の条件でWebサイトを作成してください。
+ - 資産管理ページ(電話番号、パスワードによる認証を完了すると名前、残高を見ることができるサイト)
+ - SQLインジェクションに関する脆弱性を含む（教育版）
+ - SQLは`SELECT name, stock FROM financials WHERE phone_number = '$phone_number' and password = '$password`を実行する
+ - PDOを使う
+ - PHPファイル(index.php, htmlを埋め込む)を1つ、CSSファイル(style.css)を1つ用意する。
+ - DB情報は.envからvlucas/phpdotenvで取得。
+ - DBホストは.envからHOSTで取得。
+ - DBユーザーは.envからUSERで取得。
+ - DBのパスワードは.envからPASSWORDで取得する。
+ - DB名は.envからDATABASEで取得する。
+ - テーブル名はfinancials
+ - 3つのカラム: financial_id, name, phone_number, password, stock
+ - ヒントと答えをコードブロックに出力 (```hint```, ```csv```)
+ - ヒントが直接答えにつながらないようにすること
+ - 答えをcsv形式で出力する(答え, 説明) 例: ``' OR 1 = 1 --, 説明``'
+ - スタイリッシュなデザイン
+ - formタグのaction属性は無し
