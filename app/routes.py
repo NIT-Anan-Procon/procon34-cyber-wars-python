@@ -35,7 +35,7 @@ def handle_request():
             return handle_request()
         else:
             # 正常な場合、challengesテーブルに挿入
-            sql = "INSERT INTO challenges (challenge_id, goal, choice, hint, explanation, target_table) VALUES(%s, %s, %s, %s, %s, %s);"
+            sql = "INSERT INTO challenges (challenge_id, goal, choices, hint, explanation, target_table) VALUES(%s, %s, %s, %s, %s, %s);"
             cursor.execute(sql, (challenge_id, goal, answer, hint, explanation, target_table))
             conn.commit()
 
